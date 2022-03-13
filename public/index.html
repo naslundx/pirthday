@@ -25,20 +25,21 @@
 </head>
 
 <body>
-    <p>3,141592653589...</p>
-    <div>
+    <div id="searchbox" class="dialog center">
         <h1 class="h3 mb-3 font-weight-normal">När föddes du?</h1>
-        <input type="date">
-        <button class="btn btn-lg btn-primary btn-block" onclick="search()">Sök!</button>
+        <input type="date" onchange="search()">
+        </br>
+    
+        <h3 id="update"></h2>
+        <h3 id="result"></h2>
     </div>
 
-    <h2 id="update">...</h2>
-    <h2 id="result">...</h2>
+    <footer>
+        <p>Av Marcus Näslund &copy; 2022</p>
+        <p>Använder <a href="https://rapidapi.com/totodunet/api/decimals-search">Decimals Search API</a></p>
+    </footer>
 
-    <p class="mt-5 mb-3 text-muted">Marcus Näslund &copy; 2022</p>
-
-    <script src="script.js">
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
