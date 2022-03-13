@@ -6,9 +6,11 @@ Needs python 3.7+
 
 # Run
 
-`set FLASK_APP=app`
-`set FLASK_ENV=development`
-`python -m flask run`
+```py
+set FLASK_APP=app
+set FLASK_ENV=development
+python -m flask run
+```
 
 # Todo
 
