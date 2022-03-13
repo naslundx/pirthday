@@ -38,12 +38,12 @@ def hello_world():
 # === BACKEND ===
 @app.get("/search/<int:value>")
 def search(value):
+    print(value)
+    if value <= 0 or len(str(value)) != 6:
+        return {"error": "invalid"}, 400
+
     result = api_search(value)
     decimals = api_decimals(result["position"])
     response = {**result, **decimals}
     print(response)
     return response
-
-
-
-
