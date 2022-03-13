@@ -9,7 +9,7 @@
     <link href="style.css" rel="stylesheet">
     <meta name="description" content="Hitta din födelsedag i decimalerna i pi!">
     <meta name="author" content="Marcus Näslund">
-    
+
     <meta property="og:title" content="Pi-rthday - Hitta din födelsedag i pi!">
     <meta property="og:description" content="Hitta din födelsedag i decimalerna i pi!">
     <meta property="og:image" content="http://pirthday.herokuapp.com/pi.png">
@@ -32,18 +32,29 @@
     </p>
 
     <div id="searchbox" class="dialog center">
-        <p>Talet pi är ett <i>irrationellt</i> tal, så alla* sifferkombinationer finns någonstans bland decimalerna. Även din födelsedag!</p>
+        <p>Talet pi är ett <i>irrationellt</i> tal, så alla* sifferkombinationer finns någonstans bland decimalerna.
+            Även din födelsedag!</p>
         <h1>När föddes du?</h1>
         <input type="date" onchange="search()">
         </br>
-    
-        <h3 id="update"></h2>
-        <h3 id="result"></h2>
+
+        <h3 id="update"></h3>
+        <h3 id="result"></h3>
+        <button class="trigger">Berätta mer om talet pi!</button>
+
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Talet pi</h3>
+            <p>Det uppfanns på 400-talet av Grekland.</p>
+        </div>
     </div>
 
 
     <footer>
-        <p><a href="https://www.linkedin.com/in/naslundx/">Av Marcus Näslund &copy; 2022 <i class="fa fa-address-card-o"></i></a></p>
+        <p><a href="https://www.linkedin.com/in/naslundx/">Av Marcus Näslund &copy; 2022 <i
+                    class="fa fa-address-card-o"></i></a></p>
         <p>Använder <a href="https://rapidapi.com/totodunet/api/decimals-search">Decimals Search API</a></p>
     </footer>
 
