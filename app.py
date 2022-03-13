@@ -43,7 +43,12 @@ def search(value):
         return {"error": "invalid"}, 400
 
     result = api_search(value)
-    decimals = api_decimals(result["position"])
-    response = {**result, **decimals}
+    before, after = api_decimals(result["position"])["decimals"].split(str(value))
+    response = {
+        "searched": value,
+        "position": result["position"],
+        "before": before,
+        "after": after
+    }
     print(response)
     return response
