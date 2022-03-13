@@ -14,5 +14,6 @@ python -m flask run
 
 # Todo
 
-- Better design
-- Logo
+- Show the actual decimal expansion
+- Show all decimals swooshing by
+- Information about pi

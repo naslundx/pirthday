@@ -18,12 +18,12 @@ body {
     margin-top: 50px;
     height: auto;
     overflow: hidden;
-    max-height: 8rem;
+    max-height: 15rem;
     transition: max-height 1.0s ease-in-out;
 }
 
 #searchbox.unlimited {
-    max-height: 20rem;
+    max-height: 26rem;
 }
 
 input {
@@ -39,8 +39,11 @@ input {
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    z-index: 99;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+    margin-top: 2rem;
 }
 
 h3 {
@@ -64,6 +67,7 @@ footer {
 footer p {
     font-size: larger;
     text-align: center;
+    margin: 1rem 0;
 }
 
 footer a {
