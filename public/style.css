@@ -9,7 +9,9 @@ body {
     background-color: antiquewhite;
 }
 
+
 /* HEADER */
+
 #decimals {
     font-family: 'Courier New', Courier, monospace;
     font-size: 4rem;
@@ -25,7 +27,7 @@ body {
     margin-left: 0;
     margin-right: 0;
 }
-  
+
 .marquee span#full {
     display: inline-block;
     padding-left: 100%;
@@ -51,7 +53,9 @@ body {
     }
 }
 
+
 /* UI */
+
 .center {
     margin: 0 auto;
 }
@@ -62,15 +66,15 @@ body {
 }
 
 #searchbox {
-    margin-top: 50px;
+    margin-top: 30px;
     height: auto;
     overflow: hidden;
-    max-height: 23rem;
+    max-height: 24rem;
     transition: max-height 1.0s ease-in-out;
 }
 
 #searchbox.unlimited {
-    max-height: 32rem;
+    max-height: 33rem;
 }
 
 input {
@@ -100,9 +104,11 @@ h1 {
     margin: 1rem 0;
 }
 
+
 /* FOOTER */
+
 footer {
-    position: fixed; 
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -117,7 +123,7 @@ footer {
 footer p {
     font-size: larger;
     text-align: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 footer a {
@@ -129,8 +135,10 @@ footer a:hover {
     color: royalblue;
 }
 
+
 /* POPUP */
-.trigger{
+
+.trigger {
     text-align: center;
     padding: 13px 13px;
     background: #3e3e3e;
@@ -158,6 +166,7 @@ footer a:hover {
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
+
 .modal-content {
     position: absolute;
     top: 50%;
@@ -168,15 +177,19 @@ footer a:hover {
     width: 30rem;
     border-radius: 0.5rem;
 }
+
 .modal-content p {
     margin-top: 1rem;
 }
+
 .modal-content a {
     color: black;
 }
+
 .modal-content a:hover {
-    color:darkgoldenrod;
+    color: darkgoldenrod;
 }
+
 .close-button {
     float: right;
     width: 1.5rem;
@@ -186,16 +199,19 @@ footer a:hover {
     border-radius: 0.25rem;
     background-color: lightgray;
 }
+
 .close-button:hover {
     background-color: darkgray;
 }
+
 .show-modal {
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
-@media screen and (max-width: 1000px){
+
+@media screen and (max-width: 1000px) {
     .modal-content {
         width: 80%;
     }
