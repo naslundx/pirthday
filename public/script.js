@@ -29,19 +29,19 @@ const PI_LARGE = `
 59825349042875546873115956286388235378759375195778
 18577805321712268066130019278766111959092164201989`.split('\n').join('');
 
-const move = (px) => {
+const move = (px = 0) => {
     decimals.style.marginLeft = px + "px";
 
     const rect = decimalsCenter.getBoundingClientRect();
     console.log(rect.top, rect.right, rect.bottom, rect.left);
     if ((rect.left + rect.right) / 2 > document.body.clientWidth / 2) {
-        setTimeout(() => move(px - 2), 10);
+        setTimeout(() => move(px - 3), 10);
     }
 }
 
 const update = (value) => {
-    resultTxt.innerText = `
-        Ditt födelsedatum förekommer först efter ${value['position']} decimaler!
+    resultTxt.innerHTML = `
+        ...förekommer först efter <b>${value['position']}</b> decimaler!
     `;
 
     decimals.classList.remove("marquee");
@@ -50,7 +50,7 @@ const update = (value) => {
     decimalsCenter.innerText = value['searched'];
     decimalsRest.innerText = value['after'];
 
-    setTimeout(() => move(-1), 10);
+    setTimeout(move, 10);
 }
 
 const search = () => {
@@ -59,7 +59,7 @@ const search = () => {
     // sätt ihop yymmdd datum
     const value = dateTxt.value;
     const yymmdd = value[2] + value[3] + value[5] + value[6] + value[8] + value[9];
-    updateTxt.innerText = "Du föddes " + yymmdd + "...";
+    updateTxt.innerHTML = `Ditt födelsedatum, <b>${yymmdd}</b>...`;
     resultTxt.innerText = "..."
 
     // Skicka request
@@ -71,7 +71,7 @@ const search = () => {
         })
 }
 
-dateTxt.value = "1990-01-01";
+dateTxt.value = "2022-03-14";
 decimalsFull.innerText = PI_LARGE;
 
 // Popup
@@ -93,3 +93,15 @@ trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
+document.onkeydown = (evt) => {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+        toggleModal();
+    }
+};

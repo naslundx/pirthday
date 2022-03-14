@@ -20,7 +20,7 @@ def api_search(value):
     return result
 
 def api_decimals(index):
-    result = api_call(f"/inaudi.php?number=pi&decimal={index-50}&display=100")
+    result = api_call(f"/inaudi.php?number=pi&decimal={index-100}&display=200")
     return result
 
 

@@ -14,10 +14,7 @@ python -m flask run
 
 # Todo
 
-- Better information about pi
 - Share to social media
-- Book links
-- Uptime on heroku
 - Visitor counter
 - Background image
 - Share to everyone

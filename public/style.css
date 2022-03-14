@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -56,22 +57,29 @@ body {
     margin: 0 auto;
 }
 
+.asterisk {
+    font-size: small;
+    color: maroon;
+}
+
 #searchbox {
     margin-top: 50px;
     height: auto;
     overflow: hidden;
-    max-height: 18rem;
+    max-height: 22rem;
     transition: max-height 1.0s ease-in-out;
 }
 
 #searchbox.unlimited {
-    max-height: 26rem;
+    max-height: 32rem;
 }
 
 input {
     width: 80%;
-    font-size: larger;
-    margin: 2rem 0;
+    padding: 3px;
+    font-size: x-large;
+    margin: 1.5rem 0;
+    border: 1px solid #cccccc;
 }
 
 .dialog {
@@ -127,11 +135,11 @@ footer a:hover {
     padding: 7px 13px;
     background: #3e3e3e;
     color: #fff;
-    font-size: 15px;
+    font-size: larger;
     outline: none;
     border: none;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .modal {
@@ -153,8 +161,17 @@ footer a:hover {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 1rem 1.5rem;
-    width: 24rem;
+    width: 30rem;
     border-radius: 0.5rem;
+}
+.modal-content p {
+    margin-top: 1rem;
+}
+.modal-content a {
+    color: black;
+}
+.modal-content a:hover {
+    color:darkgoldenrod;
 }
 .close-button {
     float: right;
@@ -173,4 +190,9 @@ footer a:hover {
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+@media screen and (max-width: 1000px){
+    .modal-content {
+        width: 80%;
+    }
 }
