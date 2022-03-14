@@ -29,6 +29,8 @@ const PI_LARGE = `
 59825349042875546873115956286388235378759375195778
 18577805321712268066130019278766111959092164201989`.split('\n').join('');
 
+let animationId;
+
 const move = (marginleft = 0) => {
     decimals.style.marginLeft = marginleft + "px";
 
@@ -52,17 +54,21 @@ const move = (marginleft = 0) => {
         newmargin = marginleft - 5;
     }
     // Still far away?
-    else if (rect.right > document.body.clientWidth) {
+    else if (rect.left > document.body.clientWidth) {
         newmargin = marginleft - 3;
+    }
+    // Still far away?
+    else if (rect.right > document.body.clientWidth) {
+        newmargin = marginleft - 2;
     }
     // Closing in?
     else {
-        newmargin = marginleft - 2;
+        newmargin = marginleft - 1;
     }
 
     // console.log(newmargin);
 
-    setTimeout(() => move(newmargin), 10);
+    animationId = setTimeout(() => move(newmargin), 10);
 }
 
 const update = (value) => {
@@ -76,7 +82,10 @@ const update = (value) => {
     decimalsCenter.innerText = value['searched'];
     decimalsRest.innerText = value['after'];
 
-    setTimeout(move, 10);
+    if (animationId) {
+        clearTimeout(animationId);
+    }
+    move();
 }
 
 const search = () => {
