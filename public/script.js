@@ -29,14 +29,40 @@ const PI_LARGE = `
 59825349042875546873115956286388235378759375195778
 18577805321712268066130019278766111959092164201989`.split('\n').join('');
 
-const move = (px = 0) => {
-    decimals.style.marginLeft = px + "px";
+const move = (marginleft = 0) => {
+    decimals.style.marginLeft = marginleft + "px";
 
     const rect = decimalsCenter.getBoundingClientRect();
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
-    if ((rect.left + rect.right) / 2 > document.body.clientWidth / 2) {
-        setTimeout(() => move(px - 3), 10);
+    
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
+
+    // If we've reached the right spot, stop
+    if ((rect.left + rect.right) / 2 < document.body.clientWidth / 2) {
+        return;
     }
+
+    let newmargin;
+
+    // Are we too far way? Just jump
+    if (rect.right > document.body.clientWidth * 4) {
+        newmargin = -(rect.right - document.body.clientWidth * 4);
+    }
+    // Still far away?
+    else if (rect.right > document.body.clientWidth * 2) {
+        newmargin = marginleft - 5;
+    }
+    // Still far away?
+    else if (rect.right > document.body.clientWidth) {
+        newmargin = marginleft - 3;
+    }
+    // Closing in?
+    else {
+        newmargin = marginleft - 2;
+    }
+
+    // console.log(newmargin);
+
+    setTimeout(() => move(newmargin), 10);
 }
 
 const update = (value) => {

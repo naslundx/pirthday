@@ -18,4 +18,3 @@ python -m flask run
 - Visitor counter
 - Background image
 - Share to everyone
-- Swooshier decimals
