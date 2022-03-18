@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Building..." && \
     mkdir -p public/ && \
     cp static/* public/ && \
