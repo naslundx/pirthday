@@ -1,0 +1,25 @@
+{
+  "name": "pirthday",
+  "version": "1.0.0",
+  "description": "Hitta din födelsedag bland decimalerna i pi!",
+  "main": "app.py",
+  "scripts": {
+    "start": "npm run build && gunicorn app:app",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r public/",
+    "build": "sh build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naslundx/pirthday.git"
+  },
+  "author": "Marcus Näslund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naslundx/pirthday/issues"
+  },
+  "homepage": "https://github.com/naslundx/pirthday#readme",
+  "dependencies": {
+    "minify": "^8.0.4"
+  }
+}
